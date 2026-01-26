@@ -1,0 +1,7 @@
+# --- Sync Script Temporary Files ---
+batch.bib
+temp_refs.bib
+.zotero_version
+
+# --- System Files ---
+.DS_Store
