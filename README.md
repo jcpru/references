@@ -26,13 +26,15 @@ This repository uses a custom key generation algorithm implemented via a cloud-b
 
 ### Key Format
 The citation keys follow the pattern:  
-`[first_author_lowercase][year][first_word_of_title_lowercase]`
+`[first_author_lowercase][year][first_meaningful_word_of_title]`
+
+**Formatting Rules:**
+* **Stop-word Filtering:** Leading articles and prepositions (e.g., *A, An, The, In, To, About*) are automatically skipped to align with **Better BibTeX** naming conventions.
+* **Normalization:** All non-alphanumeric characters are stripped and the string is converted to lowercase.
 
 **Example:**
-* **Author:** Abidi, Nawras
-* **Year:** 2020
-* **Title:** Revisiting the Active Sites...
-* **Generated Key:** `abidi2020revisiting`
+* **Original Title:** *"An Analysis of Quantum Dots"*
+* **Generated Key:** `smith2024analysis`
 
 ### Duplicate Handling
 In the event of multiple entries sharing the same author, year, and title-start, the script automatically appends an alphabetical suffix (`a`, `b`, `c`, etc.) to maintain unique keys within the `.bib` file.
